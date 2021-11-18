@@ -1,0 +1,24 @@
+{{ form(form) }}
+
+ <div>
+ <ol>
+  {% for livre in livre %}
+  <li>
+    <p> 
+    {{ livre.titre }}
+    </p>
+    <p> 
+    {{ livre.description }}
+    </p>
+    <p>
+    {{ livre.prix}} €
+     </p>
+          <p> 
+          {{ livre.auteur.prenom}}
+          {{ livre.auteur.nom}}
+          </p>
+      </li>
+      <hr>
+    {% endfor %}
+  </ol>
+</div>
