@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\DTO\SearchCriteria;
+
 use App\Form\SearchCriteriaType;
 use App\Repository\AuteurRepository;
 use App\Repository\CategorieRepository;
@@ -49,7 +50,7 @@ class HomeController extends AbstractController
       {
           // find permet de trouver le livre dans la base de données qui a l'id correspondant
           $livre = $livreRepository->find($id);
-          return $this->render('admin/livre/show.html.twig', ['livre' => $livre]);
+          return $this->render('admin/livre/accueil.html.twig', ['livre' => $livre]);
       }
 
       /**                  //Wildcard

@@ -12,7 +12,13 @@ class CategorieType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre')
+            ->add('titre',  TextType::class, [
+                'label'=> 'Par titre :',
+                'required' => false,
+          ])
+            ->add('submit', SubmitType::class,[
+                'label' => 'Valider',
+        ]);
         ;
     }
 
@@ -20,6 +26,8 @@ class CategorieType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Categorie::class,
+            'data' => new Categorie(),
+            'method' => 'GET',
         ]);
     }
 }
